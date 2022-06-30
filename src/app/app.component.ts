@@ -6,5 +6,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'crm';
+  public title: string;
+  // title! --> valeur undefined
+  // ou title: string = 'crm' ou valeur dans un constructeur
+  constructor(){
+    this.title = 'crm';
+  }
+
 }
