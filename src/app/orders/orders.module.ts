@@ -5,7 +5,8 @@ import { OrdersRoutingModule } from './orders-routing.module';
 
 
 @NgModule({
-  declarations: [],
+  declarations: [
+  ],
   imports: [
     CommonModule,
     OrdersRoutingModule
