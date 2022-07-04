@@ -1,0 +1,23 @@
+<header class="fixed-top">
+  <ng-content select="app-header#tr-header"></ng-content>
+  <span (click)="toggle()">
+    <ng-content select=".tr-btn"></ng-content>
+  </span>
+</header>
+<main [ngClass]="{'close-aside': close}">
+  <div class="shadow position-fixed">
+  </div>
+  <aside class="close-aside">
+    <div class="scroller">
+      <ng-content select="app-nav#tr-nav"></ng-content>
+    </div>
+  </aside>
+  <div class="page">
+    <div class="contents">
+      Content
+    </div>
+    <footer>
+      <ng-content select="app-footer#tr-footer"></ng-content>
+    </footer>
+  </div>
+</main>
