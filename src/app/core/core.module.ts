@@ -7,6 +7,7 @@ import { UiModule } from '../ui/ui.module';
 import { HeaderComponent } from './components/header/header.component';
 import { NavComponent } from './components/nav/nav.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { RouterModule } from '@angular/router';
 
 
 
@@ -16,9 +17,15 @@ import { FooterComponent } from './components/footer/footer.component';
     NavComponent,
     FooterComponent
   ],
-  imports: [
-    CommonModule
-  ],
-  exports:[LoginModule, IconsModule, TemplatesModule, UiModule, HeaderComponent, NavComponent, FooterComponent]
+  imports: [ CommonModule, RouterModule ],
+  exports:[
+    LoginModule,
+    IconsModule,
+    TemplatesModule,
+    UiModule,
+    HeaderComponent,
+    NavComponent,
+    FooterComponent
+  ]
 })
 export class CoreModule { }
