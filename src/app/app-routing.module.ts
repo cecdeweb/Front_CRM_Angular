@@ -12,6 +12,7 @@ const routes: Routes = [
   },
 ];
 
+// preloadingStrategy Class permet de charger progressivement tous les modules
 @NgModule({
   imports: [
     RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules }),
