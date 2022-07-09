@@ -7,10 +7,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   public title: string;
-  // title! --> valeur undefined
-  // ou title: string = 'crm' ou valeur dans un constructeur
+
   constructor(){
     this.title = 'crm';
   }
-
 }

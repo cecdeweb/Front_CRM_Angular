@@ -14,10 +14,10 @@ export class OrdersService {
 
   constructor(private httpClient: HttpClient) {
     this.urlApi = environment.urlApi;
-    this.collection$ = this.httpClient.get<Order[]>(this.urlApi + '/orders');
-    // equivalence ES6 (`${this.urlApi}/orders`)
+    this.collection$ = this.httpClient.get<Order[]>(`${this.urlApi}/orders`);
+    // equivalence ES6 (this.urlApi + '/orders')
 
     console.log(this.collection$);
-    
+
   }
 }
