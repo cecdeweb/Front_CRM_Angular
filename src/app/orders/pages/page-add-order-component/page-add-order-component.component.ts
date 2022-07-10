@@ -3,13 +3,17 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-page-add-order-component',
   templateUrl: './page-add-order-component.component.html',
-  styleUrls: ['./page-add-order-component.component.scss']
+  styleUrls: ['./page-add-order-component.component.scss'],
 })
 export class PageAddOrderComponentComponent implements OnInit {
+  public title: string;
+  public btnLabel: string;
 
-  constructor() { }
+  constructor() {
+        this.title = 'Ajouter une commande';
+        this.btnLabel = 'Liste des commandes';
 
-  ngOnInit(): void {
   }
 
+  ngOnInit(): void {}
 }

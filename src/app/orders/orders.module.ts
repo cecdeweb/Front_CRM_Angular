@@ -17,7 +17,7 @@ import { PageAddOrderComponentComponent } from './pages/page-add-order-component
   imports: [
     CommonModule,
     OrdersRoutingModule,
-    SharedModule
+    SharedModule,
   ]
 })
 export class OrdersModule { }
