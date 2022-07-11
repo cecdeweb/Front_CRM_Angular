@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ControlContainer } from '@angular/forms';
 import { Observable } from 'rxjs';
+import { StateOrder } from 'src/app/core/enums/state-order';
 import { Order } from 'src/app/core/models/order';
 import { OrdersService } from '../../services/orders.service';
 
@@ -14,13 +15,14 @@ export class PageListOrdersComponentComponent implements OnInit {
   public btnLabel: string;
   public headers: string[];
   public collection$: Observable<Order[]>;
+  public states: string[];
 
   constructor(private orderService: OrdersService) {
     this.title = 'Liste des commandes';
     this.btnLabel = 'Ajouter une commande';
     this.headers = [ 'Type', 'Désignation', 'Nr jours', 'TJM', 'Total', 'Statut', ];
-
     this.collection$ = this.orderService.collection$;
+    this.states = Object.values(StateOrder);
   }
 
   ngOnInit(): void {}
