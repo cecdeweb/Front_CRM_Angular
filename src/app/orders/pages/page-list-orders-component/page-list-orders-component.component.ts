@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ControlContainer } from '@angular/forms';
+import { Observable } from 'rxjs';
 import { Order } from 'src/app/core/models/order';
 import { OrdersService } from '../../services/orders.service';
 
@@ -11,24 +13,14 @@ export class PageListOrdersComponentComponent implements OnInit {
   public title: string;
   public btnLabel: string;
   public headers: string[];
-  public collection!: Order[];
+  public collection$: Observable<Order[]>;
 
   constructor(private orderService: OrdersService) {
     this.title = 'Liste des commandes';
     this.btnLabel = 'Ajouter une commande';
-    this.headers = [
-      'Type',
-      'Désignation',
-      'Nr jours',
-      'TJM',
-      'Total',
-      'Statut',
-    ];
+    this.headers = [ 'Type', 'Désignation', 'Nr jours', 'TJM', 'Total', 'Statut', ];
 
-    this.orderService.collection$.subscribe((data) => {
-      console.log(data);
-      this.collection = data;
-    });
+    this.collection$ = this.orderService.collection$;
   }
 
   ngOnInit(): void {}
@@ -39,4 +31,6 @@ export class PageListOrdersComponentComponent implements OnInit {
   public changeTitle(): void {
     this.title = 'le titre à changé';
   }
+
+
 }
