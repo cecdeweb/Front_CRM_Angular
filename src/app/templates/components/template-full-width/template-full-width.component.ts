@@ -6,10 +6,10 @@ import { Component, Input, OnInit, OnChanges } from '@angular/core';
   styleUrls: ['./template-full-width.component.scss'],
 })
 export class TemplateFullWidthComponent implements OnInit, OnChanges {
-  @Input() public title: string;
+  @Input() public title!: string;
 
   constructor() {
-    this.title = 'Le titre est ici';
+    this.title = 'Titre depuis constructeur template full width ts';
     console.log("dans constructor : " + this.title);
 
   }

@@ -1,11 +1,11 @@
 {
   "orders": [
     {
-      "typePresta": "formation",
-      "designation": "lead tech",
       "nbDays": "5",
       "unitPrice": "400",
       "state": "OPTION",
+      "typePresta": "formation",
+      "designation": "lead tech",
       "id": 1
     },
     {
@@ -39,10 +39,19 @@
       "unitPrice": "500",
       "state": "CONFIRMED",
       "id": 5
+    },
+    {
+      "nbDays": 5,
+      "unitPrice": 500,
+      "state": "CANCELED",
+      "typePresta": "fsgv",
+      "designation": "sdsvs",
+      "id": 6
     }
   ],
   "clients": [
     {
+      "state": "INACTIVE",
       "companyName": "atos",
       "firstName": "Jean",
       "lastName": "Toto",
@@ -52,7 +61,6 @@
       "zipCode": "45780",
       "city": "jeanville",
       "country": "France",
-      "state": "ACTIVE",
       "id": 1
     },
     {

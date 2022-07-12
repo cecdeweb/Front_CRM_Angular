@@ -7,12 +7,12 @@ import { VersionService } from '../../services/version.service';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
-  public version!: number
+  public version!: number;
 
   constructor(private versionService: VersionService) {
-    this.versionService.version$.subscribe((data) => {
-      this.version = data
-    })
+    this.versionService.version$.subscribe((number) => {
+      this.version = number;
+    });
 }
 
   ngOnInit(): void {

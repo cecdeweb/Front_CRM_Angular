@@ -1,1 +1,27 @@
-<p>page-list-clients works!</p>
+<app-template-full-width [title]="title" *ngIf="collection$ | async as collection">
+  <app-table-light [headers]="headers">
+    <tr *ngFor="let item of collection">
+      <td>{{ item.companyName }}</td>
+      <td>{{ item.firstName }}</td>
+      <td>{{ item.lastName }}</td>
+      <td>{{ item.email }}</td>
+      <td>{{ item.phone }}</td>
+      <td>{{ item.adress }}</td>
+      <td>{{ item.zipCode }}</td>
+      <td>{{ item.city }}</td>
+      <td>{{ item.country }}</td>
+      <td [appState]="item.state">
+        <select (change)="changeState(item, $event)" name="state" id="state" class="form-select">
+          <option
+            *ngFor="let state of states"
+            [value]="state"
+            [selected]="state === item.state">
+          {{ state }}
+        </option>
+        </select>
+      </td>
+      <td>{{ item.id }}</td>
+    </tr>
+  </app-table-light>
+  <app-btn btnLabel="Ajouter un client" btnRoute="add"></app-btn>
+</app-template-full-width>

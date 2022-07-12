@@ -1,5 +1,5 @@
-<app-template-full-width [title]="title">
-  <app-table-light [headers]="headers" *ngIf="collection$ | async as collection ">
+<app-template-full-width [title]="title" *ngIf="collection$ | async as collection ">
+  <app-table-light [headers]="headers">
     <!--<pre>{{ collection | json }}</pre> très intéressant pour visualiser la bdd -->
         <tr *ngFor="let item of collection">
           <td>{{ item.typePresta }}</td>
@@ -7,8 +7,12 @@
           <td>{{ item.nbDays }}</td>
           <td>{{ item.unitPrice | currency }}</td>
           <td>{{ item.unitPrice | total : item.nbDays | currency }}</td>
-          <td>
-            <select name="state" id="state">
+          <td [ngClass]="{
+            'state-canceled': item.state === 'CANCELED',
+            'state-confirmed': item.state === 'CONFIRMED',
+            'state-option': item.state === 'OPTION'
+          }">
+            <select (change)="changeState(item, $event)" name="state" id="state" class="form-select">
               <option
                 *ngFor="let state of states"
                 [value]="state"
@@ -19,5 +23,5 @@
           </td>
         </tr>
   </app-table-light>
-  <app-btn [btnLabel]="btnLabel" routerLink="add"></app-btn>
+  <app-btn btnLabel="Ajouter une commande" btnRoute="add"></app-btn>
 </app-template-full-width>
